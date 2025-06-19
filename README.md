@@ -40,19 +40,19 @@ access_key is provided as a parameter - initially it is stored to the repository
 5. Assert data['current']['temperature'] > 200
 
 ## Run tests locally
-If you have python3 installed:
-`python3 -m venv venv`
-Then activate venv (this works on mac and linux):
-`source venv/bin/activate`
-Then install requirements:
-`pip install -r requirements.txt`
-And start tests with:
-`python3 -m pytest --access_key <your_access_key> -o log_cli=true -o log_cli_level=INFO -v tests/ --html=report.html --self-contained-html`
-Start report with: 
-`open report.html`
+If you have python3 installed:  
+`python3 -m venv venv`  
+Then activate venv (this works on mac and linux):  
+`source venv/bin/activate`  
+Then install requirements:  
+`pip install -r requirements.txt`  
+And start tests with:  
+`python3 -m pytest --access_key <your_access_key> -o log_cli=true -o log_cli_level=INFO -v tests/ --html=report.html --self-contained-html`  
+Start report with:   
+`open report.html`  
 
 ## Run tests through the github action
-Click on Actions and just start tests
+Click on Actions and just start tests  
 Once tests are executed, there will be report.html provided to review test results
 
 
