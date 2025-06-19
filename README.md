@@ -1,4 +1,4 @@
-# Sorty-API-test
+# Sporty-API-test
 Sporty - API coding challenge  
 This project is created as a solution for the Sporty test for API testing.  
 It uses APIs from: https://weatherstack.com/documentation  
