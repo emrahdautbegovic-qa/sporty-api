@@ -36,6 +36,7 @@ jobs:
           python -m pytest --access_key $ACCESS_KEY -o log_cli=true -o log_cli_level=INFO -v tests/ --html=report.html --self-contained-html
 
       - name: Upload HTML Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: pytest-report
