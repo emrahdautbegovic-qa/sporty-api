@@ -1,12 +1,12 @@
 # Sorty-API-test
-Sporty - API coding challenge
-This project is created as a solution for the Sporty test for API testing.
-It uses APIs from: https://weatherstack.com/documentation
-Specifically, it tests test current weather endpoint /current
+Sporty - API coding challenge  
+This project is created as a solution for the Sporty test for API testing.  
+It uses APIs from: https://weatherstack.com/documentation  
+Specifically, it tests test current weather endpoint /current  
 
-BASE_URL = 'https://api.weatherstack.com'
-ENDPOINT = 'current'
-LOCATIONS=['New Delhi']
+BASE_URL = 'https://api.weatherstack.com'  
+ENDPOINT = 'current'  
+LOCATIONS=['New Delhi']  
 access_key is provided as a parameter - initially it is stored to the repository secrets and in the Github action it will be passed through the cmd params
 
 ## Test cases:
