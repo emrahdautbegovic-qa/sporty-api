@@ -1,0 +1,42 @@
+name: Run Sporty API Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest-html
+
+      - name: Run pytest with access_key
+        env:
+          ACCESS_KEY: ${{ secrets.WEATHERSTACK_ACCESS_KEY }}
+        run: |
+          source venv/bin/activate
+          python -m pytest --access_key $ACCESS_KEY -o log_cli=true -o log_cli_level=INFO -v tests/ --html=report.html --self-contained-html
+
+      - name: Upload HTML Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-report
+          path: report.html
